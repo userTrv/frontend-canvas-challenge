@@ -18,7 +18,8 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: '24'
-          cache: npm
+          # Без cache: npm — setup-node вызывает npm config get cache встроенным npm
+          # ещё до обновления, и devEngines (npm ≥ 11.19.1) обрывает его.
       # Настройки из .npmrc (min-release-age, strict-allow-scripts) требуют npm 11.19.1.
       - run: npm install -g npm@11.19.1
       - run: npm ci
