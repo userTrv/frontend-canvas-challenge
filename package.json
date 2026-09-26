@@ -11,6 +11,14 @@
     "node": ">=24 <25",
     "npm": ">=11 <12"
   },
+  "packageManager": "npm@11.19.1",
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "version": ">=11.19.1 <12",
+      "onFail": "error"
+    }
+  },
   "scripts": {
     "dev": "npm run build -w @canvas/contracts && npm run dev -w @canvas/api",
     "dev:web": "npm run build -w @canvas/contracts && npm run dev -w @canvas/web",
